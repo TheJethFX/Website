@@ -1,0 +1,41 @@
+---
+import { t, setDefaultNamespace } from "i18next";
+setDefaultNamespace("header");
+
+interface NavItem {
+  name: string;
+  link: string;
+}
+
+const navItems = t("navItems", { returnObjects: true }) as NavItem[];
+---
+
+<header
+  class="p-6 h-full w-full opacity-0 delay-1000 ease-in-out duration-1000"
+  id="header"
+>
+  <nav class="flex flex-row justify-end gap-4 px-8">
+    {
+      navItems.map((item: NavItem) => (
+        <a
+          class="hover:cursor-pointer text-white hover:opacity-50 duration-300"
+          href={`${item.link.toLowerCase()}`}
+        >
+          {item.name}
+        </a>
+      ))
+    }
+  </nav>
+
+  <script>
+    document.addEventListener(
+      "astro:page-load",
+      () => {
+        const lines = document.getElementById("header");
+        lines?.classList.remove("opacity-0");
+        lines?.classList.add("opacity-100");
+      },
+      { once: true },
+    );
+  </script>
+</header>

@@ -1,0 +1,66 @@
+---
+import { fade } from "astro:transitions";
+import Header from "../components/header.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jeth</title>
+  </head>
+
+  <div class="w-screen h-screen flex flex-col">
+    <div class="fixed w-full z-10">
+      <Header />
+    </div>
+
+    <section
+      transition:animate={fade({ duration: "2s" })}
+      class="flex items-center justify-center w-full h-full bg-center bg-cover bg-[url('/images/background_optimized.png')]"
+    >
+      <img
+        src="/images/wavy_lines.svg"
+        alt="wavy lines"
+        id="wavy-lines"
+        class="absolute w-screen h-full object-cover z-1 opacity-0 delay-300 ease-in-out duration-1000"
+      />
+      <img
+        src="/images/home_logo.svg"
+        alt="home logo"
+        id="home-logo"
+        class="w-full h-[8rem] z-10 px-6 opacity-0 delay-700 ease-in-out duration-1000"
+      />
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener(
+      "astro:page-load",
+      () => {
+        const lines = document.getElementById("wavy-lines");
+        lines?.classList.remove("opacity-0");
+        lines?.classList.add("opacity-100");
+        const logo = document.getElementById("home-logo");
+        logo?.classList.remove("opacity-0");
+        logo?.classList.add("opacity-100");
+      },
+      { once: true },
+    );
+  </script>
+
+  <style>
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+
+
+</html>
