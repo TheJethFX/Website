@@ -13,13 +13,13 @@ import Header from "../components/header.astro";
   </head>
 
   <div class="w-screen h-screen flex flex-col">
-    <div class="fixed w-full z-10">
+    <div class="fixed w-screen z-10">
       <Header />
     </div>
 
     <section
       transition:animate={fade({ duration: "2s" })}
-      class="flex items-center justify-center w-full h-full bg-center bg-cover bg-[url('/images/background_optimized.png')]"
+      class="flex items-center justify-center w-screen h-screen bg-center bg-cover bg-[url('/images/background_optimized.png')]"
     >
       <img
         src="/images/wavy_lines.svg"

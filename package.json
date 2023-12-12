@@ -16,6 +16,7 @@
     "@types/canvas-confetti": "^1.6.3",
     "astro": "^4.0.3",
     "astro-i18next": "^1.0.0-beta.21",
+    "astro-icon": "^0.8.2",
     "autoprefixer": "^10.4.15",
     "canvas-confetti": "^1.9.1",
     "postcss": "^8.4.28",

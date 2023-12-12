@@ -1,7 +1,13 @@
 {
   "navItems": [
     {
+      "name": "GitHub",
+      "icon": "brand-github",
+      "link": "https://github.com/thejethfx"
+    },
+    {
       "name": "Contact",
+      "icon": "mail",
       "link": "mailto:thejethfx@gmail.com"
     }
   ]
